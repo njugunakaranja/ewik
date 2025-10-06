@@ -1,0 +1,11 @@
+{% extends "admin/login.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="text-center mb-4">
+    <img src="{% static 'img/ewik-logo.png' %}" alt="EWIK Logo" style="height: 60px;">
+    <h2 class="text-primary mt-3">Welcome to EWIK Admin Portal</h2>
+    <p class="text-muted">Manage content, banners, and programs with ease</p>
+  </div>
+  {{ block.super }}
+{% endblock %}

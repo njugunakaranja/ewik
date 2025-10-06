@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}EWIK – E-waste Initiatives, Kenya{% endblock %}</title>
+  <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+
+
+  <!-- Material Kit CSS -->
+  <link rel="stylesheet" href="{% static 'css/material-kit.css' %}">
+  <!-- Ewik Custom Styles -->
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body class="landing-page sidebar-collapse" style="background-color: #F2F2F2; color: #212121;">
+
+  <!-- Navbar -->
+  {% include 'includes/navbar.html' %}
+
+  <!-- Optional Hero or Banner Section -->
+  {% block full_width_content %}{% endblock %}
+
+  <!-- Main Content -->
+  <div class="main main-raised">
+    <div class="container py-5">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+
+  <!-- Footer -->
+  {% include 'includes/footer.html' %}
+
+  <!-- Material Kit JS -->
+  <script src="{% static 'js/material-kit.min.js' %}" defer></script>
+  
+  <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<!-- Material Kit JS -->
+<script src="{% static 'js/material-kit.min.js' %}" defer></script>
+
+</body>
+</html>

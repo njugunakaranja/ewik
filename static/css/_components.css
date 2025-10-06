@@ -1,0 +1,358 @@
+/* === Ewik Component Styles === */
+
+/* === Color Variables (should be in _variables.css) === */
+:root {
+  --primary: #32A639;
+  --secondary: #3FBF48;
+  --accent: #B0D9B2;
+  --background: #F2F2F2;
+  --text-color: #212121;
+  --color-dark-header: #2E2E2E;
+}
+
+/* === Color Utilities === */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+.text-primary {
+  color: var(--primary) !important;
+}
+.navbar.bg-primary,
+.footer.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+  box-shadow: 0 10px 15px rgba(70, 180, 80, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* === Forms === */
+.input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+/* === Hero Section === */
+.hero-section {
+  padding: 8rem 1rem;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('/static/img/hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--color-dark-header);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+footer h4 {
+  color: #a7f3d0;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--secondary);
+}
+
+/* === Navbar Branding === */
+.logo-img {
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+.brand-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* === Dropdown Menu === */
+.dropdown-menu {
+  background-color: var(--primary);
+  border: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-item {
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* === Cards === */
+.card {
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: var(--accent);
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* === Alerts === */
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.alert-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.alert-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* === Responsive Grid === */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === Modals === */
+.modal-content {
+  border-radius: 0.5rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  border: none;
+}
+
+.modal-header {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+  justify-content: flex-end;
+}
+
+/* === Tabs === */
+.nav-tabs {
+  border-bottom: 2px solid var(--accent);
+}
+
+.nav-tabs .nav-link {
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--primary);
+  color: white;
+  font-weight: bold;
+}
+
+/* === Utility Classes === */
+.text-center {
+  text-align: center !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.mt-1 { margin-top: 0.25rem !important; }
+.mt-2 { margin-top: 0.5rem !important; }
+.mt-3 { margin-top: 1rem !important; }
+.mt-4 { margin-top: 1.5rem !important; }
+.mt-5 { margin-top: 3rem !important; }
+
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 1rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-5 { margin-bottom: 3rem !important; }
+
+.p-1 { padding: 0.25rem !important; }
+.p-2 { padding: 0.5rem !important; }
+.p-3 { padding: 1rem !important; }
+.p-4 { padding: 1.5rem !important; }
+.p-5 { padding: 3rem !important; }
+
+.rounded {
+  border-radius: 0.375rem !important;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+}
+
+/* === Icon Cards === */
+.icon-card {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.icon-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon-card i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.icon-card h5 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.icon-card p {
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* === Testimonials === */
+.testimonial {
+  background-color: #fff;
+  border-left: 5px solid var(--primary);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 0.5rem;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+.carousel-caption {
+  background-color: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.page-header.header-filter {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .title {
+  font-size: 3rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.carousel .btn {
+  margin-top: 1rem;
+}

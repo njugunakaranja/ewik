@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} | Ewik{% endblock %}
+
+{% block full_width_content %}
+  {% if banners %}
+    <div id="ewikCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for banner in banners %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="page-header header-filter" style="background-image: url('{{ banner.image.url }}');">
+              <div class="container text-center">
+                <h1 class="title text-white">{{ banner.title }}</h1>
+                {% if banner.subtitle %}
+                  <h4 class="text-white">{{ banner.subtitle }}</h4>
+                {% endif %}
+                {% if banner.link %}
+                  <a href="{{ banner.link }}" class="btn btn-primary btn-lg mt-3">
+                    {{ banner.button_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#ewikCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#ewikCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+    <script>
+        $(document).ready(function(){
+        $('#ewikCarousel').carousel({
+          interval: 5000,  // 5 seconds
+          ride: 'carousel'
+         });
+         });
+     </script>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h1>{{ page.title }}</h1>
+    <p>{{ page.content|linebreaks }}</p>
+  </div>
+{% endblock %}

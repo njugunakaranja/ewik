@@ -1,0 +1,36 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2 class="text-primary">EWIK Dashboard</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5>Total Pages</h5>
+          <p>{{ page_count }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5>Total Banners</h5>
+          <p>{{ banner_count }}</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3 shadow-sm">
+          <h5>Menu Links</h5>
+          <p>{{ menu_count }}</p>
+        </div>
+      </div>
+    </div>
+    <hr>
+      <h5>Quick Links</h5>
+<ul>
+  <li><a href="{{ page_add_url }}">Add New Page</a></li>
+  <li><a href="{{ banner_add_url }}">Add New Banner</a></li>
+  <li><a href="{{ menulink_add_url }}">Add Menu Link</a></li>
+</ul>
+
+  </div>
+{% endblock %}

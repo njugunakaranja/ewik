@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.title }} | Ewik {% endblock %}
+
+{% block full_width_content %}
+  {% if banners %}
+    <!-- Carousel Banner -->
+    <div id="ewikCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for banner in banners %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="page-header header-filter" style="background-image: url('{{ banner.image.url }}');">
+              <div class="container text-center">
+                <h1 class="title text-white">{{ banner.title }}</h1>
+                {% if banner.subtitle %}
+                  <h4 class="text-white">{{ banner.subtitle }}</h4>
+                {% endif %}
+                {% if banner.link %}
+                  <a href="{{ banner.link }}" class="btn btn-primary btn-lg mt-3">
+                    {{ banner.button_text }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <a class="carousel-control-prev" href="#ewikCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#ewikCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+<!-- About Us -->
+<section class="container py-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary">About Us</h2>
+  </div>
+  <p>
+    E-waste Initiative Kenya (EWIK) is a registered NGO founded in 2012, officially recognized in 2016. Headquartered in Gitithia, Kiambu, with branches in Nairobi, we specialize in comprehensive electronic waste management.
+  </p>
+  <p>
+    Our services include training, collection, processing, and safe disposal, while promoting sustainability and youth empowerment. We aim to create a circular economy by addressing e-waste challenges in Kenya and beyond.
+  </p>
+</section>
+
+<!-- Programs Grid -->
+<section class="container py-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary">Our Programs</h2>
+    <p>What we do to drive sustainable change</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="icon-card">
+      <i class="material-icons">engineering</i>
+      <h5>Technical Empowerment</h5>
+      <p>Increasing employability for youth, women, and retirees.</p>
+    </div>
+    <div class="icon-card">
+      <i class="material-icons">location_on</i>
+      <h5>Waste Collection</h5>
+      <p>Providing safe collection points nationwide.</p>
+    </div>
+    <div class="icon-card">
+      <i class="material-icons">campaign</i>
+      <h5>Public Awareness</h5>
+      <p>Educating on waste segregation and health impact.</p>
+    </div>
+    <div class="icon-card">
+      <i class="material-icons">recycling</i>
+      <h5>Recycling</h5>
+      <p>Enabling informal sector participation in e-waste management.</p>
+    </div>
+    <div class="icon-card">
+      <i class="material-icons">health_and_safety</i>
+      <h5>Occupational Safety</h5>
+      <p>Training for safe handling and employment sustainability.</p>
+    </div>
+    <div class="icon-card">
+      <i class="material-icons">handshake</i>
+      <h5>Partnerships</h5>
+      <p>Developing innovative, cost-effective solutions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container py-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary">Voices from the Field</h2>
+    <p>Real stories from our partners and youth</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="testimonial">
+      <p>"EWIK gave me the skills to repair phones and laptops. Now I run my own shop in Limuru."</p>
+      <div class="author">— Brian, Youth Trainee</div>
+    </div>
+    <div class="testimonial">
+      <p>"Our school partnered with EWIK to teach students about e-waste. The impact was immediate."</p>
+      <div class="author">— Ms. Wanjiku, Headteacher</div>
+    </div>
+  </div>
+</section>
+
+<!-- Call Back Form -->
+<section class="container py-5">
+  <div class="card shadow-lg p-4 rounded">
+    <form method="post" action="{% url 'home' %}">
+      {% csrf_token %}
+      <div class="text-center mb-4">
+        <h4 class="text-primary">Request a Call Back</h4>
+      </div>
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Name" required class="form-control input">
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email" required class="form-control input">
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Phone" required class="form-control input">
+      </div>
+      <div class="form-group">
+        <textarea name="message" rows="4" placeholder="Message" required class="form-control input"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary btn-round">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Contact Info -->
+<section class="container py-5">
+  <div class="text-center mb-4">
+    <h2 class="text-primary">Visit or Reach Us</h2>
+    <p>We’re headquartered in Gitithia, Kiambu, with branches in Nairobi</p>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <h5 class="text-primary">Main Office</h5>
+      <p>Gitithia, Kiambu County<br>Kenya</p>
+      <p><strong>Email:</strong> info@ewik.org<br><strong>Phone:</strong> +254 712 345678</p>
+    </div>
+    <div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.123456789!2d36.650000!3d-1.100000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1a123456789%3A0xabcdef123456789!2sGitithia%2C%20Kiambu!5e0!3m2!1sen!2ske!4v1234567890"
+        width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
